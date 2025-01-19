@@ -65,6 +65,7 @@ class UserController extends Controller
         $user=auth()->user();
         $token =JWTAuth::claims([
             'user_id'=>$user->id,
+            'name'=>$user->name,
             'email'=>$user->email
         ])->fromUser($user);
 
